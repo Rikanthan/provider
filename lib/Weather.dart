@@ -1,4 +1,9 @@
-class Weather
+
+
+
+import 'package:flutter/foundation.dart';
+
+class Weather with ChangeNotifier
 {
   String _temptype="faranide";
   int _temperatureValue=98;
@@ -7,12 +12,14 @@ class Weather
 
   String get temperatureType => _temptype;
 
-  set temparature(int newTemp)
+  set temparatureVal(int newTemp)
   {
     _temperatureValue=newTemp;
+    notifyListeners();
   }
   set temparatureType(String newType)
   {
     _temptype=newType;
+    notifyListeners();
   }
 }
